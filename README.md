@@ -32,6 +32,7 @@ Kill the mongo container
 
 ```bash
 docker kill mongodb
+docker rm mongodb
 ```
 
 ## Running the server
