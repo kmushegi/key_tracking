@@ -66,8 +66,12 @@ for key in keys:
 print("\nQuerying all keys after creation:")
 get_all_keys()
 
-# Delete all keys retrieved from get_all_keys
-delete_all_retrieved_keys()
+# Try to create duplicate keys, should fail with 409
+for key in keys:
+    create_key(key)
 
 print("\nQuerying all keys after creation:")
 get_all_keys()
+
+# Delete all keys retrieved from get_all_keys
+# delete_all_retrieved_keys()
