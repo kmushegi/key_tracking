@@ -8,7 +8,10 @@ async def create_key(key: Key):
     existing_key = await db.keys.find_one({"key_id": key.key_id})
     if existing_key:
         raise HTTPException(status_code=409, detail="Key ID already exists")
-    return await db.keys.insert_one(key.dict())
+    result = await db.keys.insert_one(key.dict())
+    # Fetch the newly created document
+    created_key = await db.keys.find_one({"_id": result.inserted_id})
+    return created_key
 
 
 async def get_all_keys():
