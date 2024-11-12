@@ -1,0 +1,5 @@
+fastapi==0.115.5          # FastAPI framework
+pydantic==2.9.2         # Data validation and settings management
+motor==3.6.0             # Async MongoDB driver for Python
+# Testing and HTTP requests
+requests==2.32.3         # Library for making HTTP requests
